@@ -4,18 +4,18 @@ import java.util.HashMap;
 
 public class Order extends Piece {
 
-    private HashMap<Integer,Integer> neededProductsMap;
+    private HashMap<Product,Integer> neededProductsMap;
 
     public Order(int x,int y) {
         super(x,y);
         this.neededProductsMap = new HashMap<>();
     }
 
-    public HashMap<Integer, Integer> getNeededProductsMap() {
+    public HashMap<Product, Integer> getNeededProductsMap() {
         return neededProductsMap;
     }
 
-    public void setNeededProductsMap(HashMap<Integer, Integer> neededProductsMap) {
+    public void setNeededProductsMap(HashMap<Product, Integer> neededProductsMap) {
         this.neededProductsMap = neededProductsMap;
     }
 
