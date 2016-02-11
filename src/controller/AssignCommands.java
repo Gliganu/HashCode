@@ -4,7 +4,6 @@ import model.Drone;
 import model.Order;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class AssignCommands {
@@ -20,7 +19,7 @@ public class AssignCommands {
         this.defaultDroneX = defaultDroneLocX;
         this.defaultDroneY = defaultDroneLocY;
         dronesList = new ArrayList<Drone>();
-        for(int i=0; i<dronesNumber; i++) {
+        for (int i = 0; i < dronesNumber; i++) {
             dronesList.add(new Drone(defaultDroneLocX, defaultDroneLocY));
         }
     }
@@ -38,10 +37,9 @@ public class AssignCommands {
             double distanceFromOrder2 = Utils.calculateCellsDistance(defaultDroneX, defaultDroneY,
                     ((Order) order2).getX(), ((Order) order2).getY());
 
-            if(distanceFromOrder1 < distanceFromOrder2) {
+            if (distanceFromOrder1 < distanceFromOrder2) {
                 return -1;
-            }
-            else if (distanceFromOrder1 > distanceFromOrder2) {
+            } else if (distanceFromOrder1 > distanceFromOrder2) {
                 return 1;
             }
             return 0;
@@ -49,8 +47,9 @@ public class AssignCommands {
     }
 
     private void assignDronesToOrders() {
-        for (Object drone : dronesList) {
-            //((Drone) drone).setCommandsList();
+        List smallOrders = Utils.chop(ordersList, dronesNumber);
+        for (int i = 0; i < dronesNumber; i++) {
+            ((Drone) dronesList.get(i)).setCommandsList((List) smallOrders.get(i));
         }
     }
 }
