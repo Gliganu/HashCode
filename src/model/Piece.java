@@ -1,8 +1,5 @@
 package model;
 
-/**
- * Created by GligaBogdan on 11-Feb-16.
- */
 public class Piece  {
 
     private int x;
