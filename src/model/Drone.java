@@ -11,9 +11,9 @@ public class Drone extends Piece {
     private Map loadedProducts;
     private int currentLoad;
 
-    public Drone(int x, int y, int load) {
+    public Drone(int x, int y) {
         super(x, y);
-        this.currentLoad = load;
+        this.currentLoad = 0;
         this.carriedProductsMap = new HashMap<>();
     }
 
