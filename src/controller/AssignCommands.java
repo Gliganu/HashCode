@@ -50,7 +50,7 @@ public class AssignCommands {
 
     private void assignDronesToOrders() {
         for (Object drone : dronesList) {
-            //((Drone) drone).setCommands();
+            ((Drone) drone).setCommandsList();
         }
     }
 }
