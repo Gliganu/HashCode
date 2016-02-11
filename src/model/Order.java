@@ -18,4 +18,6 @@ public class Order extends Piece {
     public void setNeededProductsMap(HashMap<Integer, Integer> neededProductsMap) {
         this.neededProductsMap = neededProductsMap;
     }
+
+
 }

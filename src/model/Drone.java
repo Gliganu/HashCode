@@ -1,11 +1,14 @@
 package model;
 
+import controller.IndividualDroneController;
+
 import java.util.HashMap;
 
 public class Drone extends Piece {
 
 
     private HashMap<Integer,Integer> carriedProductsMap;
+    private IndividualDroneController brain;
 
     public Drone(int x, int y) {
         super(x, y);
@@ -18,5 +21,9 @@ public class Drone extends Piece {
 
     public void setCarriedProductsMap(HashMap<Integer, Integer> carriedProductsMap) {
         this.carriedProductsMap = carriedProductsMap;
+    }
+
+    public void setBrain(IndividualDroneController controller) {
+        this.brain = controller;
     }
 }

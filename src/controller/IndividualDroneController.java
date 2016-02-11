@@ -17,9 +17,7 @@ public class IndividualDroneController {
      * Consider for now that the warehouse has enough products to fulfill all the commands.
      * Initially it has no loaded products.
      */
-    public IndividualDroneController(int x, int y, Map commandsForMe, Warehouse warehouse) {
-        currentLocationX = x;
-        currentLocationY = y;
+    public IndividualDroneController(Map commandsForMe, Warehouse warehouse) {
         this.warehouse = warehouse;
         commandsList = commandsForMe;
         loadedProducts = new HashMap<Integer, Integer>();
