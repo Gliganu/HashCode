@@ -6,14 +6,14 @@ import model.Order;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AssignCommands {
+public class AssignOrders {
 
     private List ordersList;
     private int dronesNumber;
     private List dronesList;
     private int defaultDroneX, defaultDroneY;
 
-    public AssignCommands(List ordersList, int nrDrones, int defaultDroneLocX, int defaultDroneLocY) {
+    public AssignOrders(List ordersList, int nrDrones, int defaultDroneLocX, int defaultDroneLocY) {
         this.ordersList = ordersList;
         this.dronesNumber = nrDrones;
         this.defaultDroneX = defaultDroneLocX;
@@ -49,7 +49,7 @@ public class AssignCommands {
     private void assignDronesToOrders() {
         List smallOrders = Utils.chop(ordersList, dronesNumber);
         for (int i = 0; i < dronesNumber; i++) {
-            ((Drone) dronesList.get(i)).setCommandsList((List) smallOrders.get(i));
+            ((Drone) dronesList.get(i)).setOrdersList((List) smallOrders.get(i));
         }
     }
 }

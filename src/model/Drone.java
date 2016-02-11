@@ -38,7 +38,7 @@ public class Drone extends Piece {
         return commandsList.isEmpty();
     }
 
-    public void setCommandsList(List commandsList) {
+    public void setOrdersList(List commandsList) {
         this.commandsList = commandsList;
     }
 
