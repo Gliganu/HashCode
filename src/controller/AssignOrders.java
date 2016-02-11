@@ -4,6 +4,7 @@ import model.Drone;
 import model.Order;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class AssignOrders {
@@ -30,19 +31,22 @@ public class AssignOrders {
     }
 
     private void sortOrdersBasedOnLocation() {
-        ordersList.sort((order1, order2) -> {
+        ordersList.sort(new Comparator() {
+            @Override
+            public int compare(Object order1, Object order2) {
 
-            double distanceFromOrder1 = Utils.calculateCellsDistance(defaultDroneX, defaultDroneY,
-                    ((Order) order1).getX(), ((Order) order1).getY());
-            double distanceFromOrder2 = Utils.calculateCellsDistance(defaultDroneX, defaultDroneY,
-                    ((Order) order2).getX(), ((Order) order2).getY());
+                double distanceFromOrder1 = Utils.calculateCellsDistance(defaultDroneX, defaultDroneY,
+                        ((Order) order1).getX(), ((Order) order1).getY());
+                double distanceFromOrder2 = Utils.calculateCellsDistance(defaultDroneX, defaultDroneY,
+                        ((Order) order2).getX(), ((Order) order2).getY());
 
-            if (distanceFromOrder1 < distanceFromOrder2) {
-                return -1;
-            } else if (distanceFromOrder1 > distanceFromOrder2) {
-                return 1;
+                if (distanceFromOrder1 < distanceFromOrder2) {
+                    return -1;
+                } else if (distanceFromOrder1 > distanceFromOrder2) {
+                    return 1;
+                }
+                return 0;
             }
-            return 0;
         });
     }
 
