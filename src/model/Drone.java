@@ -1,17 +1,19 @@
 package model;
 
-import controller.IndividualDroneController;
-
 import java.util.HashMap;
+import java.util.Map;
 
 public class Drone extends Piece {
 
-
     private HashMap<Integer,Integer> carriedProductsMap;
-    private IndividualDroneController brain;
+    private Warehouse warehouse;
+    private Map commandsList;
+    private Map loadedProducts;
+    private int currentLoad;
 
     public Drone(int x, int y) {
         super(x, y);
+        this.currentLoad = 0;
         this.carriedProductsMap = new HashMap<>();
     }
 
@@ -23,7 +25,22 @@ public class Drone extends Piece {
         this.carriedProductsMap = carriedProductsMap;
     }
 
-    public void setBrain(IndividualDroneController controller) {
-        this.brain = controller;
+    private void doTheJob() {
+        while (!isJobDone()) {
+            fulfillCommandsWithCurrentLoad();
+            loadProductsFromWarehouse();
+        }
+    }
+
+    private void fulfillCommandsWithCurrentLoad() {
+
+    }
+
+    private void loadProductsFromWarehouse() {
+        Map availableProducts = warehouse.getAvailableProductsMap();
+    }
+
+    public boolean isJobDone() {
+        return commandsList.isEmpty();
     }
 }
