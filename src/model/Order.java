@@ -4,10 +4,14 @@ import java.util.HashMap;
 
 public class Order extends Piece {
 
+<<<<<<< HEAD
     private HashMap<Product,Integer> neededProductsMap;
+=======
+    private HashMap<Product, Integer> neededProductsMap;
+>>>>>>> Parsed input
 
-    public Order(int x,int y) {
-        super(x,y);
+    public Order(int x, int y) {
+        super(x, y);
         this.neededProductsMap = new HashMap<>();
     }
 

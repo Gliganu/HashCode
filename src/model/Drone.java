@@ -11,12 +11,15 @@ public class Drone extends Piece {
 
     private List commandsList;
     private List loadedProducts;
-    private int currentLoad;
 
-    public Drone(int x, int y) {
+    private int currentLoad;
+    private int maxLoad;
+
+    public Drone(int x, int y, int maxLoad) {
         super(x, y);
         this.currentLoad = 0;
         this.carriedProductsMap = new HashMap<>();
+        this.maxLoad = maxLoad;
     }
 
     private void doTheJob() {

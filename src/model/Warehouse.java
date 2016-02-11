@@ -6,8 +6,12 @@ import java.util.List;
 
 public class Warehouse extends Piece {
 
+<<<<<<< HEAD
     private HashMap<Product,Integer> availableProductsMap;
     private List<Order> orderList;
+=======
+    private HashMap<Product, Integer> availableProductsMap;
+>>>>>>> Parsed input
 
     public Warehouse(int x, int y) {
         super(x, y);
